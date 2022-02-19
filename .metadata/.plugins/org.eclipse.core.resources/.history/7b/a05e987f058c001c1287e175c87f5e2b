@@ -1,0 +1,22 @@
+package com.vobi.bank.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.vobi.bank.respository.CustomerRepository;
+
+@SpringBootTest
+class CustomerRepositoryIT {
+
+	@Autowired
+	CustomerRepository customerRepository; 
+	
+	@Test
+	void debeValidarDependencias() {
+		assertNotNull(customerRepository);
+	}
+
+}

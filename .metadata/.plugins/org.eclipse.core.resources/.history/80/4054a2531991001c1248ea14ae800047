@@ -1,0 +1,22 @@
+package com.vobi.bank.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.vobi.bank.domain.dto;
+import com.vobi.bank.services.CustomerService;
+
+@RestController
+@RequestMapping("/api/v1/customers")
+public class CustomerController {
+	
+	@Autowired
+	CustomerService customerService;
+	
+	public List<CustomerDTO> findAll() throws Exception {
+		return null;
+	}
+}

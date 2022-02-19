@@ -1,0 +1,114 @@
+package com.vobi.bank.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.vobi.bank.domain.Customer;
+import com.vobi.bank.domain.DocumentType;
+import com.vobi.bank.domain.UserType;
+import com.vobi.bank.domain.Users;
+
+import lombok.extern.slf4j.Slf4j;
+
+@SpringBootTest
+@TestMethodOrder(OrderAnnotation.class)
+@Slf4j
+class UserRepositoryIT {
+
+	@Autowired
+	UserRepository userRepository; 
+	
+	@Autowired
+	UserTypeRepository userTypeRepository; 
+	
+	@Test
+	@Order(1)
+	void debeValidarDependencias() {
+		assertNotNull(userRepository);
+		assertNotNull(userTypeRepository);
+	}
+	
+	@Test
+	@Order(2)
+	void debeCrearUnCustomer() {
+		//Arrange
+		Integer idUserType=1;
+		String userEmail= "test@correo.com";
+		
+		Users user=null;
+		UserType userType=userTypeRepository.findById(idUserType).get();
+		
+		user=new Users();
+		user.setUserEmail(userEmail);
+		user.setName("fake name");
+		user.setUserType(userType);
+		
+		//Act
+		
+		user=userRepository.save(user);
+		
+		//Assert		
+		assertNotNull(user,"El user es nulo no se pudo grabar");
+	}
+	
+	@Test
+	@Order(3)
+	void debeModificarUnCustomer() {
+		//Arrange		
+		Integer idCustomer=14836554;
+		
+		Customer customer=null;		
+		
+		customer= customerRepository.findById(idCustomer).get();
+		customer.setEnable("N");		
+		//Act
+		
+		customer=customerRepository.save(customer);
+		
+		//Assert		
+		assertNotNull(customer,"El customer es nulo no se pudo modificar");
+	}
+	
+	@Test
+	@Order(4)
+	void debeEliminarUnCustomer() {
+		//Arrange		
+		Integer idCustomer=14836554;
+		
+		Customer customer=null;		
+		Optional<Customer> customerOptional=null;
+		
+		customer= customerRepository.findById(idCustomer).get();		
+		//Act
+		
+		customerRepository.delete(customer);
+		customerOptional = customerRepository.findById(idCustomer);
+		
+		//Assert		
+		assertFalse(customerOptional.isPresent(),"No pudo borrar al customer");
+	}
+	
+	@Test
+	@Order(5)
+	void debeConsultarTodosLosCustomers() {
+		//Arrange		
+		
+		List<Customer> customers;
+		
+		customers= customerRepository.findAll();		
+		//Act  
+		customers.forEach(customer -> log.info(customer.getName()));
+		//Assert		
+		assertFalse(customers.isEmpty(),"No pudo consultar los customer");
+	}
+
+}

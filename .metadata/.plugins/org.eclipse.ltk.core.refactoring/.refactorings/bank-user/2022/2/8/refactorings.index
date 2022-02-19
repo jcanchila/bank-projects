@@ -1,0 +1,9 @@
+1645225682636	Rename type 'CustomerRepository'
+1645225798814	Rename type 'DocumentTypeRepository'
+1645225878509	Rename type 'CustomerServiceImpl'
+1645225955496	Rename type 'CustomerService'
+1645226177322	Rename field 'customerRepository'
+1645227030099	Rename type 'CustomerRepositoryIT'
+1645227520315	Rename type 'CustomerServiceIT'
+1645229831746	Copy package
+1645229839534	Delete element

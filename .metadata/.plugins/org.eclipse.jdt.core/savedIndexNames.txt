@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\ingjo\source\repos\Java Artifacts\.metadata\.plugins\org.eclipse.jdt.core
+3044008915.index
+38415734.index
+2340745178.index
+1865797976.index
+3172801064.index
