@@ -1,6 +1,0 @@
-package com.vobi.bank.services;
-
-public class GenericService<T, ID> {
-	
-	
-}

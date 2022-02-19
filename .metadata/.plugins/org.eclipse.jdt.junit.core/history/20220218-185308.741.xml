@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="UserServiceIT" project="bank-user" tests="5" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="com.vobi.bank.repository.UserServiceIT" incomplete="true" displayname="UserServiceIT" uniqueid="[engine:junit-jupiter]/[class:com.vobi.bank.repository.UserServiceIT]">
-    <testcase name="debeValidarDependencias" classname="com.vobi.bank.repository.UserServiceIT" time="0.219" displayname="debeValidarDependencias()" uniqueid="[engine:junit-jupiter]/[class:com.vobi.bank.repository.UserServiceIT]/[method:debeValidarDependencias()]"/>
-    <testcase name="debeCrearUnUsuario" classname="com.vobi.bank.repository.UserServiceIT" incomplete="true" displayname="debeCrearUnUsuario()" uniqueid="[engine:junit-jupiter]/[class:com.vobi.bank.repository.UserServiceIT]/[method:debeCrearUnUsuario()]"/>
-    <testcase name="debeModificarUnUsuario" classname="com.vobi.bank.repository.UserServiceIT" incomplete="true" displayname="debeModificarUnUsuario()" uniqueid="[engine:junit-jupiter]/[class:com.vobi.bank.repository.UserServiceIT]/[method:debeModificarUnUsuario()]"/>
-    <testcase name="debeEliminarUnUser" classname="com.vobi.bank.repository.UserServiceIT" incomplete="true" displayname="debeEliminarUnUser()" uniqueid="[engine:junit-jupiter]/[class:com.vobi.bank.repository.UserServiceIT]/[method:debeEliminarUnUser()]"/>
-    <testcase name="debeConsultarTodosLosCustomers" classname="com.vobi.bank.repository.UserServiceIT" incomplete="true" displayname="debeConsultarTodosLosCustomers()" uniqueid="[engine:junit-jupiter]/[class:com.vobi.bank.repository.UserServiceIT]/[method:debeConsultarTodosLosCustomers()]"/>
-  </testsuite>
-</testrun>

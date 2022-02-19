@@ -1,5 +1,0 @@
-package com.vobi.bank.services;
-
-public interface GenericService {
-
-}
